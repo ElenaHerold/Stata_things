@@ -1,0 +1,182 @@
+* ===============================================================================
+* // leap2 Graphing Scheme //
+* PURPOSE: Graphing scheme for Hermle et al. (2022)
+* VERSION: 1.0
+* NOTE: "help scheme_files" or "help scheme entries" for documentation
+* Elena Herold (ifo munich)
+* 2022-04-01
+* ===============================================================================
+
+*based on s2color
+#include s2color
+
+graphsize x 6
+margin graph vsmall 
+
+* -------------------------------------------------------------------------------
+* Legend options
+* -------------------------------------------------------------------------------
+* Default position
+clockdir legend_position	7
+gridringstyle legend_ring	0
+
+* column; short signatures/keys
+numstyle legend_cols		1
+numstyle legend_rows		0
+gsize legend_key_xsize		5
+yesno legend_text_first     no
+
+* box
+color legend         		white%80
+linewidth legend			medium
+color legend_line 			gs10
+
+*Key Labels
+gsize key_label  			medsmall
+color key_label  			gs1
+margin key_label 			tiny
+gsize label_gap  			tiny
+
+* -------------------------------------------------------------------------------
+* Texts
+* -------------------------------------------------------------------------------
+
+*Title
+gsize heading         		large
+margin heading 				medlarge
+gsize title_gap       		medium
+color heading 				black
+
+*Subitle
+gsize subheading      		medsmall
+margin subheading 			vsmall
+
+*Body - Caption
+gsize body            		medsmall
+
+*Small Body-Notes
+gsize small_body      		vsmall
+color small_body			gs6
+
+
+*Others
+gsize text            		medsmall
+gsize label           		medsmall     
+gsize small_label     		small       
+gsize note            		small
+
+
+* -------------------------------------------------------------------------------
+* Axis, Gridlines & extra Lines
+* -------------------------------------------------------------------------------
+**Axis 
+*Title
+gsize axis_title      		medlarge
+gsize axis_space      		vtiny
+gsize axis_title_gap  		small
+margin axis_title 			vsmall
+
+*Line
+color axis 					black
+color tickline  			black        
+linewidth tickline  		medium     
+yesno x2axis_ontop   		yes
+yesno y2axis_ontop   		yes
+
+yesno swap_bar_scaleaxis	yes
+
+*Tick Labels
+gsize tick_label       		medsmall
+gsize minortick_label  		small
+color tick_label       		black
+anglestyle horizontal_tick  horizontal
+anglestyle vertical_tick    horizontal
+gsize tickgap 				tiny
+gsize notickgap 			vsmall
+
+*Grids
+yesno draw_major_hgrid      no   
+yesno draw_majornl_hgrid    yes  
+yesno draw_major_vgrid      no   
+yesno draw_majornl_vgrid    yes  
+
+*Lines
+color xyline  				gs14 
+linewidth xyline  			thin
+
+
+* -------------------------------------------------------------------------------
+* Plots
+* ------------------------------------------------------------------------------- 
+*Scatter 
+symbol p 			Oh
+symbolsize p 		small
+
+*Connected 
+yesno pcmissings	yes                                 
+connectstyle p 		l
+
+*Bar
+linewidth bar          		thin
+linewidth pbar              thin
+linewidth p1bar             thin
+linewidth p2bar             thin
+linewidth p3bar             thin
+linewidth p4bar             thin
+linewidth p5bar             thin
+linewidth p6bar             thin
+linewidth p7bar             thin
+linewidth p8bar             thin
+linewidth p9bar             thin
+linewidth p10bar            thin
+linewidth p11bar            thin
+linewidth p12bar            thin
+linewidth p13bar            thin
+linewidth p14bar            thin
+linewidth p15bar            thin
+linestyle plotregion		none
+intensity bar 				80
+
+*Histogram
+linewidth histogram    		vthin
+intensity histogram         80
+
+* -------------------------------------------------------------------------------
+* Color options
+* -------------------------------------------------------------------------------
+
+*White background for all plots
+color background            white
+
+* Colors for grids etc.
+color tick         			gs9
+color minortick    			gs9
+color grid                  gs9
+color major_grid            gs9
+color minor_grid            gs9
+color axisline     			gs8
+color matrix         		gs6    
+color matrixmarkline 		gs6    
+color refmarker      		gs11
+
+* Default colors for non-specified objects
+color p1					emerald
+color p2					sienna
+color p3 					dkgreen
+color p4 					dkorange 
+color p5 					cranberry
+color p6					navy
+color p7					teal
+color p8					purple
+color p9					khaki
+color p10					midblue
+color p11					gold
+color p12					forest_green
+color p13					brown
+color p14					erose
+color p15					ebblue
+
+* Confidence intervals
+intensity ci_area    		inten30
+color ci_area               gs4%50
+color ci_arealine           gs4%0
