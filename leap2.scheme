@@ -4,14 +4,17 @@
 * VERSION: 1.0
 * NOTE: "help scheme_files" or "help scheme entries" for documentation
 * Elena Herold (ifo munich)
-* 2022-04-08
+* 2022-04-01
 * ===============================================================================
 
 *based on s2color
 #include s2color
 
-graphsize x 6
-margin graph vsmall 
+
+margin graph 			medium
+margin plotregion       tiny
+color plotregion_line	black
+linewidth plotregion  	medthin 
 
 * -------------------------------------------------------------------------------
 * Legend options
@@ -32,7 +35,7 @@ linewidth legend			medium
 color legend_line 			gs10
 
 *Key Labels
-gsize key_label  			medsmall
+gsize key_label  			small
 color key_label  			gs1
 margin key_label 			tiny
 gsize label_gap  			tiny
@@ -71,50 +74,70 @@ gsize note            		small
 * -------------------------------------------------------------------------------
 **Axis 
 *Title
-gsize axis_title      		medlarge
-gsize axis_space      		vtiny
-gsize axis_title_gap  		small
-margin axis_title 			vsmall
+gsize axis_title      		large 
+gsize axis_title_gap  		vsmall
+
 
 *Line
 color axis 					black
 color tickline  			black        
-linewidth tickline  		medium     
-yesno x2axis_ontop   		yes
-yesno y2axis_ontop   		yes
+linewidth tickline  		medthin     
+
+yesno extend_axes_low       yes
+yesno extend_axes_high      yes
+yesno extend_axes_full_low  yes  
+yesno extend_axes_full_high yes
+
 
 yesno swap_bar_scaleaxis	yes
 
 *Tick Labels
-gsize tick_label       		medsmall
 gsize minortick_label  		small
 color tick_label       		black
 anglestyle horizontal_tick  horizontal
 anglestyle vertical_tick    horizontal
-gsize tickgap 				tiny
-gsize notickgap 			vsmall
 
 *Grids
+color grid                  gs12
+color major_grid            gs12
+color minor_grid            gs14
+color axisline     			black 
+color refmarker      		gs11
+
 yesno draw_major_hgrid      no   
-yesno draw_majornl_hgrid    yes  
-yesno draw_major_vgrid      no   
-yesno draw_majornl_vgrid    yes  
+yesno draw_majornl_hgrid    no  
+yesno draw_major_vgrid      yes   
+yesno draw_majornl_vgrid    no  
 
 *Lines
-color xyline  				gs14 
-linewidth xyline  			thin
-
+color xyline  				red 
+linewidth xyline  			medium
+linepattern xyline			dash
 
 * -------------------------------------------------------------------------------
 * Plots
 * ------------------------------------------------------------------------------- 
 *Scatter 
-symbol p 			Oh
-symbolsize p 		small
+symbol p 			circle 
+symbolsize p 		medium
+color p1markfill	midblue
+color p2markfill	gs9
+color p3markfill	orange
+color p1markline	white
+color p2markline	white
+linewidth p1mark 	thin
+linewidth p2mark 	thin
+linealign p1mark	outside
+mlalign p1mark	outside
 
 *Connected 
+color p1line 		midblue
+linewidth p1  		medium
+color p2line 		midblue
+linewidth p2  		medium
+
 yesno pcmissings	yes                                 
-connectstyle p 		l
+connectstyle p 		direct
 
 *Bar
 linewidth bar          		thin
@@ -134,7 +157,6 @@ linewidth p12bar            thin
 linewidth p13bar            thin
 linewidth p14bar            thin
 linewidth p15bar            thin
-linestyle plotregion		none
 intensity bar 				80
 
 *Histogram
@@ -147,17 +169,6 @@ intensity histogram         80
 
 *White background for all plots
 color background            white
-
-* Colors for grids etc.
-color tick         			gs9
-color minortick    			gs9
-color grid                  gs9
-color major_grid            gs9
-color minor_grid            gs9
-color axisline     			gs8
-color matrix         		gs6    
-color matrixmarkline 		gs6    
-color refmarker      		gs11
 
 * Default colors for non-specified objects
 color p1					emerald
